@@ -7,5 +7,7 @@ Core Features and Innovations
 This project integrates three main technical innovations, derived from the paper, to achieve state-of-the-art denoising performance on complex patterned surfaces:
 
 1.Hybrid NLM Enhancement (Auxiliary Input): We innovatively incorporate the features from Non-Local Means (NLM) pre-denoised phase maps as an auxiliary third input channel to the U-Net Generator. This significantly boosts the network's ability to utilize non-local similarity and enhance denoising performance.
+
 2.Tailored Composite Loss Function: The training utilizes a sophisticated loss function, combining $\text{L1}/\text{SSIM}$ loss, Gradient Loss, Phase MSE Loss, and GAN Adversarial Loss. The Gradient Loss and Phase MSE Loss are calculated directly on the original phase values ($\phi_{gt}$), ensuring superior preservation of phase structure.
+
 3.Structural-preserving Inference Strategy: For real-world large-scale DHM images, we employ an Overlap-Tile Strategy with Gaussian Blending (as seen in EPDN-test.py). This post-processing mechanism is critical for eliminating the visible stitching artifacts that commonly occur when processing large images via deep learning patches.
